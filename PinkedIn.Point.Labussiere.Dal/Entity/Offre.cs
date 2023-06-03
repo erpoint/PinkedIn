@@ -15,7 +15,7 @@ namespace PinkedIn.Point.Labussiere.Dal.Entity
         /// <summary>
         /// Identifiant de l'offre.
         /// </summary>
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
         /// Intitulé de l'offre.
@@ -43,8 +43,23 @@ namespace PinkedIn.Point.Labussiere.Dal.Entity
         public int StatutId { get; set; }
 
         /// <summary>
+        /// Statut de l'offre.
+        /// </summary>
+        public Statut Statut { get; set; }
+
+        /// <summary>
         /// Responsable de l'offre.
         /// </summary>
         public string Responsable { get; set; }
+
+        /// <summary>
+        /// Identifiant de la postulation associée à l'offre.
+        /// </summary>
+        public string IdPostulation { get; set; }
+
+        /// <summary>
+        /// Postulation associée à l'offre.
+        /// </summary>
+        public Postulation Postulation { get; set; }
     }
 }

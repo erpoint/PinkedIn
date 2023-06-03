@@ -73,9 +73,12 @@
     <Compile Include="Entity\Offre.cs" />
     <Compile Include="Entity\Postulation.cs" />
     <Compile Include="Entity\Statut.cs" />
-    <Compile Include="Mapping\EmployeMapping.cs" />
-    <Compile Include="Mapping\ExperienceMapping.cs" />
-    <Compile Include="Mapping\FormationMapping.cs" />
+    <Compile Include="Mapping\PostulationMapping.cs" />
+    <Compile Include="Mapping\OffreMapping.cs" />
+	<Compile Include="Mapping\EmployeMapping.cs" />
+	<Compile Include="Mapping\ExperienceMapping.cs" />
+	<Compile Include="Mapping\FormationMapping.cs" />
+	<Compile Include="Mapping\StatutMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

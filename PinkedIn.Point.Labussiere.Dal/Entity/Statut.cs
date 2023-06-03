@@ -15,7 +15,7 @@ namespace PinkedIn.Point.Labussiere.Dal.Entity
         /// <summary>
         /// Identifiant du statut.
         /// </summary>
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
         /// Libellé du statut.
