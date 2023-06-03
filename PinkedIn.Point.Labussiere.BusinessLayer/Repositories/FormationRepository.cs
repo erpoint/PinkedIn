@@ -1,33 +1,77 @@
-﻿using PinkedIn.Point.Labussiere.Modele.Entity;
+﻿using PinkedIn.Point.Labussiere.Modele;
+using PinkedIn.Point.Labussiere.Modele.Entity;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 
 namespace PinkedIn.Point.Labussiere.BusinessLayer.Repositories
 {
+    /// <summary>
+    /// Repertoire de formations.
+    /// </summary>
     public class FormationRepository : IRepository<Formation>
     {
-        public void DeleteEntity(Formation entity)
+        /// <summary>
+        /// Contexte de la base de données.
+        /// </summary>
+        private ContextDA _context;
+
+        /// <summary>
+        /// Collection de formations.
+        /// </summary>
+        private DbSet<Formation> _formations;
+
+        /// <summary>
+        /// Constructeur de la clase.
+        /// </summary>
+        public FormationRepository()
         {
-            throw new System.NotImplementedException();
+            _context = new ContextDA();
+            _formations = _context.Formations;
         }
 
-        public List<Formation> FindAll()
-        {
-            throw new System.NotImplementedException();
-        }
-
+        /// <inheritdoc />
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Formation FindEntity(int id)
         {
-            throw new System.NotImplementedException();
+            return _formations.Find(id);
         }
 
+        /// <inheritdoc />
+        /// <returns></returns>
+        public List<Formation> FindAll()
+        {
+            return _formations.ToList();
+        }
+
+        /// <inheritdoc />
+        /// <param name="entity"></param>
         public void InsertEntity(Formation entity)
         {
-            throw new System.NotImplementedException();
+            _formations.Add(entity);
+
+            _context.SaveChanges();
         }
 
+        /// <inheritdoc />
+        /// <param name="entity"></param>
+        public void DeleteEntity(Formation entity)
+        {
+            _formations.Remove(entity);
+
+            _context.SaveChanges();
+        }
+
+        /// <inheritdoc />
+        /// <param name="entity"></param>
         public void UpdateEntity(Formation entity)
         {
-            throw new System.NotImplementedException();
+            var entry = _context.Entry(entity);
+            entry.CurrentValues.SetValues(entity);
+            entry.State = EntityState.Modified;
+
+            _context.SaveChanges();
         }
     }
 }

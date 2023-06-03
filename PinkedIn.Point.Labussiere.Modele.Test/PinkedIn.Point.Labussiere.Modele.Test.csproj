@@ -49,10 +49,21 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmployeRespositoryUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PinkedIn.Point.Labussiere.BusinessLayer\PinkedIn.Point.Labussiere.BusinessLayer.csproj">
+      <Project>{5ed59f96-0502-4206-9c21-71a90801b1ba}</Project>
+      <Name>PinkedIn.Point.Labussiere.BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PinkedIn.Point.Labussiere.Dal\PinkedIn.Point.Labussiere.Modele.csproj">
+      <Project>{6d59d87d-53d1-49c3-9a3f-a28fa5d78d40}</Project>
+      <Name>PinkedIn.Point.Labussiere.Modele</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

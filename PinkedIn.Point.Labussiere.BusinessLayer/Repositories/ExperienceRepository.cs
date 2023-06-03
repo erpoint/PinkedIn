@@ -7,9 +7,9 @@ using System.Linq;
 namespace PinkedIn.Point.Labussiere.BusinessLayer.Repositories
 {
     /// <summary>
-    /// Repertoire d'employés.
+    /// Repertoire d'expériences.
     /// </summary>
-    public class EmployeRepository : IRepository<Employe>
+    public class ExperienceRepository : IRepository<Experience>
     {
         /// <summary>
         /// Contexte de la base de données.
@@ -17,55 +17,55 @@ namespace PinkedIn.Point.Labussiere.BusinessLayer.Repositories
         private ContextDA _context;
 
         /// <summary>
-        /// Collection d'employés.
+        /// Collection d'expériences.
         /// </summary>
-        private DbSet<Employe> _employes;
+        private DbSet<Experience> _experiences;
 
         /// <summary>
         /// Constructeur de la classe.
         /// </summary>
-        public EmployeRepository() 
+        public ExperienceRepository()
         {
             _context = new ContextDA();
-            _employes = _context.Employes;
+            _experiences = _context.Experiences;
         }
 
         /// <inheritdoc />
         /// <param name="id"></param>
         /// <returns></returns>
-        public Employe FindEntity(int id)
+        public Experience FindEntity(int id)
         {
-            return _employes.Find(id);
+            return _experiences.Find(id);
         }
 
         /// <inheritdoc />
         /// <returns></returns>
-        public List<Employe> FindAll()
+        public List<Experience> FindAll()
         {
-            return _employes.ToList();
+            return _experiences.ToList();
         }
 
         /// <inheritdoc />
         /// <param name="entity"></param>
-        public void InsertEntity(Employe entity)
+        public void InsertEntity(Experience entity)
         {
-            _employes.Add(entity);
+            _experiences.Add(entity);
 
             _context.SaveChanges();
         }
 
         /// <inheritdoc />
         /// <param name="entity"></param>
-        public void DeleteEntity(Employe entity)
+        public void DeleteEntity(Experience entity)
         {
-            _employes.Remove(entity);
+            _experiences.Remove(entity);
 
             _context.SaveChanges();
         }
 
         /// <inheritdoc />
         /// <param name="entity"></param>
-        public void UpdateEntity(Employe entity)
+        public void UpdateEntity(Experience entity)
         {
             var entry = _context.Entry(entity);
             entry.CurrentValues.SetValues(entity);
