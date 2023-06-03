@@ -40,5 +40,20 @@ namespace PinkedIn.Point.Labussiere.Dal.Entity
         /// Biographie de l'empoyé.
         /// </summary>
         public string Biographie { get; set; }
+
+        /// <summary>
+        /// Formations associées à l'employé.
+        /// </summary>
+        public List<Formation> Formations { get; set; }
+
+        /// <summary>
+        /// Expériences associées à l'employé.
+        /// </summary>
+        public List<Experience> Experiences { get; set; }
+        
+        /// <summary>
+        /// Postulations associées à l'employé.
+        /// </summary>
+        public List<Postulation> Postulations { get; set; }
     }
 }

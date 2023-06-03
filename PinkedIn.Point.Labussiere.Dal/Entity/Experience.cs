@@ -22,6 +22,11 @@ namespace PinkedIn.Point.Labussiere.Dal.Entity
         public int EmployeId { get; set; }
 
         /// <summary>
+        /// Employé asscocié à la formation.
+        /// </summary>
+        public Employe Employe { get; set; }
+
+        /// <summary>
         /// Intitulé de l'expérience.
         /// </summary>
         public string Intitule { get; set; }
