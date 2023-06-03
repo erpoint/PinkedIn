@@ -8,8 +8,8 @@
     <ProjectGuid>{6D59D87D-53D1-49C3-9A3F-A28FA5D78D40}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PinkedIn.Point.Labussiere.Dal</RootNamespace>
-    <AssemblyName>PinkedIn.Point.Labussiere.Dal</AssemblyName>
+    <RootNamespace>PinkedIn.Point.Labussiere.Modele</RootNamespace>
+    <AssemblyName>PinkedIn.Point.Labussiere.Modele</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -66,8 +66,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ContextDA.cs" />
+    <Compile Include="Entity\Employe.cs" />
+    <Compile Include="Entity\Experience.cs" />
     <Compile Include="Entity\Formation.cs" />
+    <Compile Include="Entity\Offre.cs" />
+    <Compile Include="Entity\Postulation.cs" />
+    <Compile Include="Entity\Statut.cs" />
+    <Compile Include="Mapping\EmployeMapping.cs" />
+    <Compile Include="Mapping\ExperienceMapping.cs" />
+    <Compile Include="Mapping\FormationMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -95,9 +103,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Mapping\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

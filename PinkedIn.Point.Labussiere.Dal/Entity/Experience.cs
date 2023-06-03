@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PinkedIn.Point.Labussiere.Modele.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,7 @@ namespace PinkedIn.Point.Labussiere.Dal.Entity
     /// <summary>
     /// Classe représentant une expérience.
     /// </summary>
-    public class Experience
+    public class Experience : IEntity
     {
         /// <summary>
         /// Identifiant de l'expérience.

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PinkedIn.Point.Labussiere.Modele.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,7 @@ namespace PinkedIn.Point.Labussiere.Dal.Entity
     /// <summary>
     /// Classe représentant un employé.
     /// </summary>
-    public class Employe
+    public class Employe : IEntity
     {
         /// <summary>
         /// Identifiant de l'employé.

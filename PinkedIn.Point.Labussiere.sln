@@ -3,13 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinkedIn.Point.Labussiere.Dal", "PinkedIn.Point.Labussiere.Dal\PinkedIn.Point.Labussiere.Dal.csproj", "{6D59D87D-53D1-49C3-9A3F-A28FA5D78D40}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinkedIn.Point.Labussiere.Modele", "PinkedIn.Point.Labussiere.Dal\PinkedIn.Point.Labussiere.Modele.csproj", "{6D59D87D-53D1-49C3-9A3F-A28FA5D78D40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinkedIn.Point.Labussiere.Console", "PinkedIn.Point.Labussiere.Console\PinkedIn.Point.Labussiere.Console.csproj", "{D14D5B35-C3D6-498E-88B3-DC59DD7FEC86}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinkedIn.Point.Labussiere.Modele.Console", "PinkedIn.Point.Labussiere.Console\PinkedIn.Point.Labussiere.Modele.Console.csproj", "{D14D5B35-C3D6-498E-88B3-DC59DD7FEC86}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Éléments de solution", "Éléments de solution", "{A1CE4A71-0497-4C9D-8B16-1DA707329087}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinkedIn.Point.Labussiere.Modele.Test", "PinkedIn.Point.Labussiere.Modele.Test\PinkedIn.Point.Labussiere.Modele.Test.csproj", "{9CA7BD62-ED04-4A6E-9ECC-FFFEBACD5D27}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6D59D87D-53D1-49C3-9A3F-A28FA5D78D40} = {6D59D87D-53D1-49C3-9A3F-A28FA5D78D40}
 	EndProjectSection
 EndProject
 Global
@@ -26,6 +31,10 @@ Global
 		{D14D5B35-C3D6-498E-88B3-DC59DD7FEC86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D14D5B35-C3D6-498E-88B3-DC59DD7FEC86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D14D5B35-C3D6-498E-88B3-DC59DD7FEC86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CA7BD62-ED04-4A6E-9ECC-FFFEBACD5D27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CA7BD62-ED04-4A6E-9ECC-FFFEBACD5D27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CA7BD62-ED04-4A6E-9ECC-FFFEBACD5D27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CA7BD62-ED04-4A6E-9ECC-FFFEBACD5D27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
