@@ -1,4 +1,4 @@
-﻿using PinkedIn.Point.Labussiere.Dal.Entity;
+﻿using PinkedIn.Point.Labussiere.Modele.Entity;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
@@ -6,17 +6,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PinkedIn.Point.Labussiere.Dal.Mapping
+namespace PinkedIn.Point.Labussiere.Modele.Mapping
 {
-    public class ExperienceMapping : EntityTypeConfiguration<Experience>
+    public class FormationMapping : EntityTypeConfiguration<Formation>
     {
-        public ExperienceMapping()
+        public FormationMapping()
         {
-            ToTable("APP_EXPERIENCE");
+            ToTable("APP_FORMATION");
             HasKey(e => e.Id);
 
             Property(e => e.Id)
-                    .HasColumnName("EXP_ID")
+                    .HasColumnName("FOR_ID")
                     .IsRequired()
                     .HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
 
@@ -25,15 +25,15 @@ namespace PinkedIn.Point.Labussiere.Dal.Mapping
                 .IsRequired();
 
             HasRequired(e => e.Employe)
-                .WithMany(e => e.Experiences)
+                .WithMany(e => e.Formations)
                 .HasForeignKey(e => e.EmployeId);
 
             Property(e => e.Intitule)
-                .HasColumnName("EXP_INTITULE")
+                .HasColumnName("FOR_INTITULE")
                 .IsRequired();
 
             Property(e => e.Date)
-                .HasColumnName("EXP_DATE")
+                .HasColumnName("FOR_DATE")
                 .IsRequired();
         }
     }

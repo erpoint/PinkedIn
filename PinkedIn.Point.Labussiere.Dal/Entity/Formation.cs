@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PinkedIn.Point.Labussiere.Dal.Entity
+namespace PinkedIn.Point.Labussiere.Modele.Entity
 {
     /// <summary>
     /// Classe représentant une formation.

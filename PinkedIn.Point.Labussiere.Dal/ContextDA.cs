@@ -1,4 +1,4 @@
-﻿using PinkedIn.Point.Labussiere.Dal.Entity;
+﻿using PinkedIn.Point.Labussiere.Modele.Entity;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PinkedIn.Point.Labussiere.Dal
+namespace PinkedIn.Point.Labussiere.Modele
 {
     public class ContextDA : DbContext
     {
