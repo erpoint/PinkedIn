@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PinkedIn.Point.Labussiere.Dal
+namespace PinkedIn.Point.Labussiere.BusinessLayer.Repositories
 {
-    public class Class1
+    public class IRepository<IEntity>
     {
     }
 }
