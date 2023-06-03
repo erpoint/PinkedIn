@@ -11,7 +11,7 @@ namespace PinkedIn.Point.Labussiere.Dal.Entity
     /// </summary>
     public class Statut
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Libelle { get; set; }
     }
 }
