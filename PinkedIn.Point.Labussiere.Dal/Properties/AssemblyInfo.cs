@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Les informations générales relatives à un assembly dépendent de
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
-[assembly: AssemblyTitle("PinkedIn.Point.Labussiere.Dal")]
+[assembly: AssemblyTitle("PinkedIn.Point.Labussiere.Modele")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("workgroup")]
-[assembly: AssemblyProduct("PinkedIn.Point.Labussiere.Dal")]
+[assembly: AssemblyProduct("PinkedIn.Point.Labussiere.Modele")]
 [assembly: AssemblyCopyright("Copyright © workgroup 2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

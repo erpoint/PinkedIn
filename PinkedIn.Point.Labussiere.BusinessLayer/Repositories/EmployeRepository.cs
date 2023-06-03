@@ -1,5 +1,5 @@
-﻿using PinkedIn.Point.Labussiere.Dal;
-using PinkedIn.Point.Labussiere.Dal.Entity;
+﻿using PinkedIn.Point.Labussiere.Modele;
+using PinkedIn.Point.Labussiere.Modele.Entity;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -8,38 +8,45 @@ namespace PinkedIn.Point.Labussiere.BusinessLayer.Repositories
 {
     public class EmployeRepository : IRepository<Employe>
     {
-        DbSet<Employe> employes;
+        private ContextDA _context;
+        private DbSet<Employe> _employes;
 
         public EmployeRepository() 
         {
-            employes = new ContextDA().Employes;
+            _context = new ContextDA();
+            _employes = _context.Employes;
         }
-
-        public Employe FindEmploye(int id)
+        public Employe FindEntity(int id)
         {
-            return employes.Where(e => e.Id == id).FirstOrDefault();
+            return _employes.Find(id);
         }
 
         public List<Employe> FindAll()
         {
-            return employes.Where(e => true).ToList();
+            return _employes.ToList();
         }
 
-        public void InsertEmploye(Employe employe)
+        public void InsertEntity(Employe entity)
         {
-            employes.Add(employe);
+            _employes.Add(entity);
+
+            _context.SaveChanges();
         }
 
-        public void DeleteEmploye(int id)
+        public void DeleteEntity(Employe entity)
         {
-            employes.Remove(FindEmploye(id));
+            _employes.Remove(entity);
+
+            _context.SaveChanges();
         }
 
-        public void UpdateEmploye(Employe employe)
+        public void UpdateEntity(Employe entity)
         {
-           DeleteEmploye(employe.Id);
-           InsertEmploye(employe);
-            
+            var entry = _context.Entry(entity);
+            entry.CurrentValues.SetValues(entity);
+            entry.State = EntityState.Modified;
+
+            _context.SaveChanges();
         }
     }
 }
