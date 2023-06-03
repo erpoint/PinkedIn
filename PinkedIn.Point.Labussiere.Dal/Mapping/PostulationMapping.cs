@@ -1,4 +1,4 @@
-﻿using PinkedIn.Point.Labussiere.Dal.Entity;
+﻿using PinkedIn.Point.Labussiere.Modele.Entity;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PinkedIn.Point.Labussiere.Dal.Mapping
+namespace PinkedIn.Point.Labussiere.Modele.Mapping
 {
     public class PostulationMapping : EntityTypeConfiguration<Postulation>
     {

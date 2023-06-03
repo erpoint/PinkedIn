@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinkedIn.Point.Labussiere.M
 		{6D59D87D-53D1-49C3-9A3F-A28FA5D78D40} = {6D59D87D-53D1-49C3-9A3F-A28FA5D78D40}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinkedIn.Point.Labussiere.BusinessLayer", "PinkedIn.Point.Labussiere.BusinessLayer\PinkedIn.Point.Labussiere.BusinessLayer.csproj", "{5ED59F96-0502-4206-9C21-71A90801B1BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{9CA7BD62-ED04-4A6E-9ECC-FFFEBACD5D27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CA7BD62-ED04-4A6E-9ECC-FFFEBACD5D27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CA7BD62-ED04-4A6E-9ECC-FFFEBACD5D27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ED59F96-0502-4206-9C21-71A90801B1BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ED59F96-0502-4206-9C21-71A90801B1BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ED59F96-0502-4206-9C21-71A90801B1BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ED59F96-0502-4206-9C21-71A90801B1BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
