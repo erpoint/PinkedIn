@@ -24,9 +24,9 @@ namespace PinkedIn.Point.Labussiere.BusinessLayer.Repositories
         /// <summary>
         /// Constructeur de la classe.
         /// </summary>
-        public ExperienceRepository(string connectionString)
+        public ExperienceRepository()
         {
-            _context = new ContextDA(connectionString);
+            _context = new ContextDA();
             _experiences = _context.Experiences;
         }
 
@@ -70,6 +70,17 @@ namespace PinkedIn.Point.Labussiere.BusinessLayer.Repositories
             var entry = _context.Entry(entity);
             entry.CurrentValues.SetValues(entity);
             entry.State = EntityState.Modified;
+
+            _context.SaveChanges();
+        }
+
+        /// <inheritdoc />
+        public void DeleteAll()
+        {
+            foreach (Experience experience in _experiences)
+            {
+                _experiences.Remove(experience);
+            }
 
             _context.SaveChanges();
         }

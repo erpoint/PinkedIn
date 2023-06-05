@@ -24,9 +24,9 @@ namespace PinkedIn.Point.Labussiere.BusinessLayer.Repositories
         /// <summary>
         /// Constructeur de la clase.
         /// </summary>
-        public FormationRepository(string connectionString)
+        public FormationRepository()
         {
-            _context = new ContextDA(connectionString);
+            _context = new ContextDA();
             _formations = _context.Formations;
         }
 
@@ -70,6 +70,17 @@ namespace PinkedIn.Point.Labussiere.BusinessLayer.Repositories
             var entry = _context.Entry(entity);
             entry.CurrentValues.SetValues(entity);
             entry.State = EntityState.Modified;
+
+            _context.SaveChanges();
+        }
+
+        /// <inheritdoc />
+        public void DeleteAll()
+        {
+            foreach (Formation formation in _formations)
+            {
+                _formations.Remove(formation);
+            }
 
             _context.SaveChanges();
         }

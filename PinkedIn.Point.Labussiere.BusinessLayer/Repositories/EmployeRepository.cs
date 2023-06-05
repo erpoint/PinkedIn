@@ -24,9 +24,9 @@ namespace PinkedIn.Point.Labussiere.BusinessLayer.Repositories
         /// <summary>
         /// Constructeur de la classe.
         /// </summary>
-        public EmployeRepository(string connectionString) 
+        public EmployeRepository() 
         {
-            _context = new ContextDA(connectionString);
+            _context = new ContextDA();
             _employes = _context.Employes;
         }
 
@@ -70,6 +70,17 @@ namespace PinkedIn.Point.Labussiere.BusinessLayer.Repositories
             var entry = _context.Entry(entity);
             entry.CurrentValues.SetValues(entity);
             entry.State = EntityState.Modified;
+
+            _context.SaveChanges();
+        }
+
+        /// <inheritdoc />
+        public void DeleteAll()
+        {
+            foreach(Employe employe in _employes)
+            {
+                _employes.Remove(employe); 
+            }
 
             _context.SaveChanges();
         }
