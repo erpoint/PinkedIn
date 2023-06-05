@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PinkedIn.Point.Labussiere.BusinessLayer.Repositories
 {
-    internal class OffreRepository : IRepository<Offre>
+    public class OffreRepository : IRepository<Offre>
     {
         private ContextDA _context;
         private DbSet<Offre> _offres;
