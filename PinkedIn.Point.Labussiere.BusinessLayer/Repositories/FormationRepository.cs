@@ -24,9 +24,9 @@ namespace PinkedIn.Point.Labussiere.BusinessLayer.Repositories
         /// <summary>
         /// Constructeur de la clase.
         /// </summary>
-        public FormationRepository()
+        public FormationRepository(string connectionString)
         {
-            _context = new ContextDA();
+            _context = new ContextDA(connectionString);
             _formations = _context.Formations;
         }
 
