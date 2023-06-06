@@ -56,6 +56,9 @@
     <Compile Include="Repositories\ExperienceRepository.cs" />
     <Compile Include="Repositories\FormationRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\OffreRepository.cs" />
+    <Compile Include="Repositories\PostulationRepository.cs" />
+    <Compile Include="Repositories\StatutRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PinkedIn.Point.Labussiere.Dal\PinkedIn.Point.Labussiere.Modele.csproj">
