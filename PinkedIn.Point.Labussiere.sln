@@ -21,6 +21,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinkedIn.Point.Labussiere.BusinessLayer", "PinkedIn.Point.Labussiere.BusinessLayer\PinkedIn.Point.Labussiere.BusinessLayer.csproj", "{5ED59F96-0502-4206-9C21-71A90801B1BA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinkedIn.Point.Labussiere.MVC", "PinkedIn.Point.Labussiere.MVC\PinkedIn.Point.Labussiere.MVC.csproj", "{51A7DB2E-A5FE-485A-B7F0-F6117960159A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5ED59F96-0502-4206-9C21-71A90801B1BA} = {5ED59F96-0502-4206-9C21-71A90801B1BA}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

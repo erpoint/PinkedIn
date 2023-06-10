@@ -1,9 +1,6 @@
-﻿using PinkedIn.Point.Labussiere.Modele.Entity;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace PinkedIn.Point.Labussiere.Modele.Entity
 {
@@ -25,6 +22,8 @@ namespace PinkedIn.Point.Labussiere.Modele.Entity
         /// <summary>
         /// Date de l'offre.
         /// </summary>
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Date { get; set; }
         
         /// <summary>
@@ -53,13 +52,8 @@ namespace PinkedIn.Point.Labussiere.Modele.Entity
         public string Responsable { get; set; }
 
         /// <summary>
-        /// Identifiant de la postulation associée à l'offre.
+        /// Postulations associées à l'offre.
         /// </summary>
-        public string IdPostulation { get; set; }
-
-        /// <summary>
-        /// Postulation associée à l'offre.
-        /// </summary>
-        public Postulation Postulation { get; set; }
+        public List<Postulation> Postulations { get; set; }
     }
 }

@@ -127,8 +127,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EmployesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\OffreController.cs" />
+    <Compile Include="Controllers\OffresController.cs" />
+    <Compile Include="Controllers\StatutsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -209,14 +211,38 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Offres\Create.cshtml" />
+    <Content Include="Views\Offres\Delete.cshtml" />
+    <Content Include="Views\Offres\Details.cshtml" />
+    <Content Include="Views\Offres\Edit.cshtml" />
+    <Content Include="Views\Offres\Index.cshtml" />
+    <Content Include="Views\Employes\Create.cshtml" />
+    <Content Include="Views\Employes\Delete.cshtml" />
+    <Content Include="Views\Employes\Details.cshtml" />
+    <Content Include="Views\Employes\Edit.cshtml" />
+    <Content Include="Views\Employes\Index.cshtml" />
+    <Content Include="Views\Statuts\Create.cshtml" />
+    <Content Include="Views\Statuts\Delete.cshtml" />
+    <Content Include="Views\Statuts\Details.cshtml" />
+    <Content Include="Views\Statuts\Edit.cshtml" />
+    <Content Include="Views\Statuts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Offre\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PinkedIn.Point.Labussiere.BusinessLayer\PinkedIn.Point.Labussiere.BusinessLayer.csproj">
+      <Project>{5ed59f96-0502-4206-9c21-71a90801b1ba}</Project>
+      <Name>PinkedIn.Point.Labussiere.BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PinkedIn.Point.Labussiere.Dal\PinkedIn.Point.Labussiere.Modele.csproj">
+      <Project>{6d59d87d-53d1-49c3-9a3f-a28fa5d78d40}</Project>
+      <Name>PinkedIn.Point.Labussiere.Modele</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

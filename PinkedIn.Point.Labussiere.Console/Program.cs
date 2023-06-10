@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PinkedIn.Point.Labussiere.Modele;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,8 @@ namespace PinkedIn.Point.Labussiere.Console
     {
         static void Main(string[] args)
         {
+            ContextDA contextDA = new ContextDA();
+            contextDA.Employes.ToList();
         }
     }
 }
