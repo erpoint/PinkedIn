@@ -9,16 +9,22 @@ using System.Threading.Tasks;
 
 namespace PinkedIn.Point.Labussiere.Modele
 {
+    /// <summary>
+    /// Conexte de la base de données.
+    /// </summary>
     public class ContextDA : DbContext
     {
-        public ContextDA() : base("name=PinkedInConnectionString") { }
+        /// <summary>
+        /// Constructeur de la classe.
+        /// </summary>
+        public ContextDA() : base($"name=PinkedInConnectionString") { }
 
         public DbSet<Employe> Employes { get; set; }
         public DbSet<Formation> Formations { get; set; }
         public DbSet<Experience> Experiences { get; set; }
         public DbSet<Offre> Offres { get; set; }
         public DbSet<Postulation> Postulations { get; set; }
-        public DbSet<Statut> Status { get; set; }
+        public DbSet<Statut> Statuts { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -18,6 +18,17 @@ namespace PinkedIn.Point.Labussiere.BusinessLayer.Repositories
             this._context = new ContextDA();
             this._postulations = this._context.Postulations;
         }
+
+        public void DeleteAll()
+        {
+            foreach (Postulation postulation in _postulations)
+            {
+                _postulations.Remove(postulation);
+            }
+
+            _context.SaveChanges();
+        }
+
         public void DeleteEntity(Postulation entity)
         {
             _postulations.Remove(entity);

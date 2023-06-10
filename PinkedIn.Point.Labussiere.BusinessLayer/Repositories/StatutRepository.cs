@@ -16,8 +16,19 @@ namespace PinkedIn.Point.Labussiere.BusinessLayer.Repositories
         public StatutRepository()
         {
             this._context = new ContextDA();
-            this._statuts = this._context.Status;
+            this._statuts = this._context.Statuts;
         }
+
+        public void DeleteAll()
+        {
+            foreach(Statut statut in _statuts)
+            {
+                _statuts.Remove(statut);
+            }
+
+            _context.SaveChanges();
+        }
+
         public void DeleteEntity(Statut entity)
         {
             _statuts.Remove(entity);

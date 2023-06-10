@@ -14,6 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Éléments de solution", "�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinkedIn.Point.Labussiere.Modele.Test", "PinkedIn.Point.Labussiere.Modele.Test\PinkedIn.Point.Labussiere.Modele.Test.csproj", "{9CA7BD62-ED04-4A6E-9ECC-FFFEBACD5D27}"
 	ProjectSection(ProjectDependencies) = postProject
+		{5ED59F96-0502-4206-9C21-71A90801B1BA} = {5ED59F96-0502-4206-9C21-71A90801B1BA}
 		{6D59D87D-53D1-49C3-9A3F-A28FA5D78D40} = {6D59D87D-53D1-49C3-9A3F-A28FA5D78D40}
 	EndProjectSection
 EndProject
