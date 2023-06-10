@@ -43,5 +43,10 @@ namespace PinkedIn.Point.Labussiere.BusinessLayer.Repositories
         /// <param name="entity"></param>
         void UpdateEntity(IEntity entity);
 
+        /// <summary>
+        /// Permet de supprimer toutes les entités de la collection.
+        /// </summary>
+        void DeleteAll();
+
     }
 }
