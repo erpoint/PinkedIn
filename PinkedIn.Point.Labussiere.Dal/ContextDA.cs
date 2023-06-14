@@ -19,8 +19,8 @@ namespace PinkedIn.Point.Labussiere.Modele
         /// </summary>
         public ContextDA() : base($"name=PinkedInConnectionString") 
         {
-            /*Database.SetInitializer(new DropCreateDatabaseAlways<ContextDA>());*/
-            Database.SetInitializer<ContextDA>(null);
+            Database.SetInitializer(new DropCreateDatabaseAlways<ContextDA>());
+            /*Database.SetInitializer<ContextDA>(null);*/
         }
 
         public DbSet<Employe> Employes { get; set; }

@@ -55,5 +55,10 @@ namespace PinkedIn.Point.Labussiere.Modele.Entity
         /// Postulations associées à l'offre.
         /// </summary>
         public List<Postulation> Postulations { get; set; }
+
+        public Offre()
+        {
+            Postulations = new List<Postulation>();
+        }
     }
 }

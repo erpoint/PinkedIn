@@ -130,6 +130,7 @@
     <Compile Include="Controllers\EmployesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OffresController.cs" />
+    <Compile Include="Controllers\PostulationsController.cs" />
     <Compile Include="Controllers\StatutsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -226,6 +227,11 @@
     <Content Include="Views\Statuts\Details.cshtml" />
     <Content Include="Views\Statuts\Edit.cshtml" />
     <Content Include="Views\Statuts\Index.cshtml" />
+    <Content Include="Views\Postulations\Create.cshtml" />
+    <Content Include="Views\Postulations\Delete.cshtml" />
+    <Content Include="Views\Postulations\Details.cshtml" />
+    <Content Include="Views\Postulations\Edit.cshtml" />
+    <Content Include="Views\Postulations\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

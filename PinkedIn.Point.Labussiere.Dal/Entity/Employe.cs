@@ -55,5 +55,12 @@ namespace PinkedIn.Point.Labussiere.Modele.Entity
         /// Postulations associées à l'employé.
         /// </summary>
         public List<Postulation> Postulations { get; set; }
+
+        public Employe()
+        {
+            Formations = new List<Formation>();
+            Experiences = new List<Experience>();
+            Postulations = new List<Postulation>();
+        }
     }
 }

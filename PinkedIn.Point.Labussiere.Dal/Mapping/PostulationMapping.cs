@@ -1,4 +1,5 @@
 ﻿using PinkedIn.Point.Labussiere.Modele.Entity;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
 
 namespace PinkedIn.Point.Labussiere.Modele.Mapping
@@ -13,7 +14,8 @@ namespace PinkedIn.Point.Labussiere.Modele.Mapping
             
             Property(postulation => postulation.Id)
                 .HasColumnName("POS_ID")
-                .IsRequired();
+                .IsRequired()
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             Property(postulation => postulation.OffreId)
                 .HasColumnName("OFF_ID")
