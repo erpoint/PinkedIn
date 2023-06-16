@@ -232,6 +232,7 @@
     <Content Include="Views\Postulations\Details.cshtml" />
     <Content Include="Views\Postulations\Edit.cshtml" />
     <Content Include="Views\Postulations\Index.cshtml" />
+    <Content Include="Views\Offres\Apply.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

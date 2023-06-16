@@ -11,6 +11,8 @@ namespace PinkedIn.Point.Labussiere.MVC.Controllers
     {
         private OffreRepository offreRepo = new OffreRepository();
         private StatutRepository statutRepo = new StatutRepository();
+        private PostulationRepository postulationRepo = new PostulationRepository();
+        private EmployeRepository employeRepo = new EmployeRepository();    
 
         // GET: Offres
         public ActionResult Index()
@@ -113,6 +115,36 @@ namespace PinkedIn.Point.Labussiere.MVC.Controllers
             Offre offre = offreRepo.FindEntity((int)id);
             offreRepo.DeleteEntity(offre);
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Apply(int? offreId, int? employeId)
+        {
+            if (offreId == null && employeId == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Offre offre = offreRepo.FindEntity((int)offreId);
+            if (offre == null)
+            {
+                return HttpNotFound();
+            }
+            return View(offre);
+        }
+
+        [HttpPost, ActionName("Apply")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Apply(int offreId, int employeId)
+        {
+            Postulation postulation = new Postulation()
+            {
+                OffreId = offreId,
+                EmployeId = employeId,
+                Date = DateTime.Now,
+                Statut = "En attente"
+            };
+            postulationRepo.InsertEntity(postulation);
+            return RedirectToAction("Index");
+            
         }
     }
 }

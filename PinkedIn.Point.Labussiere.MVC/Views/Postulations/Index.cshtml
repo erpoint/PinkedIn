@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<PinkedIn.Point.Labussiere.Modele.Entity.Postulation>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Mes postulations";
 }
 
-<h2>Index</h2>
+<h2>Mes postulations</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Postuler sur une offre", "Create")
 </p>
 <table class="table">
     <tr>
@@ -41,9 +41,9 @@
             @Html.DisplayFor(modelItem => item.Statut)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Modifier", "Edit", new { item.Id }) |
+            @Html.ActionLink("Voir détails", "Details", new { item.Id }) |
+            @Html.ActionLink("Supprimer", "Delete", new { item.Id })
         </td>
     </tr>
 }
