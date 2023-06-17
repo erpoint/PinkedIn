@@ -6,9 +6,9 @@
 
 <h2>Mes postulations</h2>
 
-<p>
+@*<p>
     @Html.ActionLink("Postuler sur une offre", "Create")
-</p>
+</p>*@
 <table class="table">
     <tr>
         <th>
@@ -41,9 +41,9 @@
             @Html.DisplayFor(modelItem => item.Statut)
         </td>
         <td>
-            @Html.ActionLink("Modifier", "Edit", new { item.Id }) |
-            @Html.ActionLink("Voir détails", "Details", new { item.Id }) |
-            @Html.ActionLink("Supprimer", "Delete", new { item.Id })
+            @Html.ActionLink("Modifier", "Edit", new { offreId = item.OffreId, empId = item.EmployeId }) |
+            @Html.ActionLink("Voir détails", "Details", new { item.OffreId, item.EmployeId }) |
+            @*@Html.ActionLink("Supprimer", "Delete", new { item.Id })*@
         </td>
     </tr>
 }

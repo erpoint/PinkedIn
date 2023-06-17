@@ -7,7 +7,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PinkedIn.Point.Labussiere.BusinessLayer.Repositories;
-using PinkedIn.Point.Labussiere.Modele;
 using PinkedIn.Point.Labussiere.Modele.Entity;
 
 namespace PinkedIn.Point.Labussiere.MVC.Controllers
@@ -21,18 +20,18 @@ namespace PinkedIn.Point.Labussiere.MVC.Controllers
         // GET: Postulations
         public ActionResult Index()
         {
-            var postulations = postulationRepo.FindAll();
+            var postulations = postulationRepo.FindByEmploye(1);
             return View(postulations.ToList());
         }
 
         // GET: Postulations/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int? offreId, int? empId)
         {
-            if (id == null)
+            if (offreId == null && empId == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Postulation postulation = postulationRepo.FindEntity((int)id);
+            Postulation postulation = postulationRepo.FindEntityByEmployeAndOffre((int)empId,(int)offreId);
             if (postulation == null)
             {
                 return HttpNotFound();

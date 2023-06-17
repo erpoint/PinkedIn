@@ -54,7 +54,6 @@ namespace PinkedIn.Point.Labussiere.BusinessLayer.Repositories
         public void UpdateEntity(Statut entity)
         {
             var entry = _context.Entry(entity);
-            entry.CurrentValues.SetValues(entity);
             entry.State = EntityState.Modified;
 
             _context.SaveChanges();

@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Prenom)
+            Prénom
         </dt>
 
         <dd>
@@ -27,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DateDeNaissance)
+            Date de naissance
         </dt>
 
         <dd>
@@ -35,7 +35,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Anciennete)
+            Ancienneté (en années)
         </dt>
 
         <dd>
@@ -49,10 +49,34 @@
         <dd>
             @Html.DisplayFor(model => model.Biographie)
         </dd>
-
+        <dt>
+            @Html.DisplayNameFor(model => model.Experiences)
+        </dt>
+        <table class="table">
+            <tr>
+                <th>
+                    Intitulé
+                </th>
+                <th>
+                    Date
+                </th>
+            </tr>
+            @foreach (var item in Model?.Experiences)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Intitule)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                </tr>
+            }
+        </table>
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Ajouter une experience", "AddExperience", new { id = Model.Id }) |
+    @Html.ActionLink("Modifier", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Retourner à la liste", "Index")
 </p>

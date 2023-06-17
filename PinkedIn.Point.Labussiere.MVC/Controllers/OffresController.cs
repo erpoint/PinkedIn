@@ -143,7 +143,7 @@ namespace PinkedIn.Point.Labussiere.MVC.Controllers
                 Statut = "En attente"
             };
             postulationRepo.InsertEntity(postulation);
-            return RedirectToAction("Index");
+            return RedirectToAction("Details", new { id = offreId });
             
         }
     }
