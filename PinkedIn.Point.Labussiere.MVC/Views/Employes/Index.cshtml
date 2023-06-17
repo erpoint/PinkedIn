@@ -9,6 +9,10 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+<form asp-controller="EmployesController" asp-action="Index" method="post">
+    <input name="searchEmployee" placeholder="rechercher" type="text"/>
+    <input type="submit"/>
+</form>
 <table class="table">
     <tr>
         <th>

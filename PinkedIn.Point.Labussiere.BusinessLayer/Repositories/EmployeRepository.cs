@@ -38,6 +38,21 @@ namespace PinkedIn.Point.Labussiere.BusinessLayer.Repositories
             return _employes.Find(id);
         }
 
+        public List<Employe> FindByFirstName(string name)
+        {
+            return _employes.Where(e => e.Prenom.ToUpper().Contains(name.ToUpper())).ToList();
+        }
+
+        public List<Employe> FindByLastName(string name)
+        {
+            return _employes.Where(e => e.Nom.ToUpper().Contains(name.ToUpper())).ToList();
+        }
+
+        public List<Employe> FindByName(string name)
+        {
+            return FindByFirstName(name).Concat(FindByLastName(name)).ToList();
+        }
+
         /// <inheritdoc />
         /// <returns></returns>
         public List<Employe> FindAll()

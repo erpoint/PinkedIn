@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
@@ -16,6 +17,18 @@ namespace PinkedIn.Point.Labussiere.MVC.Controllers
         public ActionResult Index()
         {
             return View(repo.FindAll());
+        }
+
+        //POST: Emploes
+        [HttpPost]
+        public ActionResult Index(string searchEmployee)
+        {
+            List<Employe> employes = new List<Employe>();
+            if (!string.IsNullOrEmpty(searchEmployee))
+            {
+                employes = repo.FindByName(searchEmployee);
+            }
+            return View(employes);
         }
 
         // GET: Employes/Details/5
