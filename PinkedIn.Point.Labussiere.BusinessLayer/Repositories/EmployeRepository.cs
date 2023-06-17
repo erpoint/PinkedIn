@@ -50,7 +50,7 @@ namespace PinkedIn.Point.Labussiere.BusinessLayer.Repositories
 
         public List<Employe> FindByName(string name)
         {
-            return FindByFirstName(name).Concat(FindByLastName(name)).ToList();
+            return FindByFirstName(name).Concat(FindByLastName(name)).Distinct().ToList();
         }
 
         /// <inheritdoc />
