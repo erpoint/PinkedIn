@@ -24,6 +24,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinkedIn.Point.Labussiere.M
 	ProjectSection(ProjectDependencies) = postProject
 		{5ED59F96-0502-4206-9C21-71A90801B1BA} = {5ED59F96-0502-4206-9C21-71A90801B1BA}
 	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinkdIn.Point.Labussiere.gui", "PinkdIn.Point.Labussiere.gui\PinkdIn.Point.Labussiere.gui.csproj", "{24A366DC-EB18-4389-A3E1-2EC872A9EFA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +52,10 @@ Global
 		{51A7DB2E-A5FE-485A-B7F0-F6117960159A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51A7DB2E-A5FE-485A-B7F0-F6117960159A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51A7DB2E-A5FE-485A-B7F0-F6117960159A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24A366DC-EB18-4389-A3E1-2EC872A9EFA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24A366DC-EB18-4389-A3E1-2EC872A9EFA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24A366DC-EB18-4389-A3E1-2EC872A9EFA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24A366DC-EB18-4389-A3E1-2EC872A9EFA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
