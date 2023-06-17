@@ -13,7 +13,7 @@ namespace PinkedIn.Point.Labussiere.Modele.Mapping
     {
         public StatutMapping()
         {
-            ToTable("APP_SATUT");
+            ToTable("APP_STATUT");
             HasKey(statut => statut.Id);
             Property(statut => statut.Id).IsRequired()
                 .HasColumnName("STA_ID")

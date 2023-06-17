@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+    <section class="row" aria-labelledby="aspnetTitle">
+        <h1 id="title">PinkedIn</h1>
+        <p class="lead">Bienvenue sur PinkedIn! Trouver le job de vos rêves.</p>
+    </section>
+
+    <div class="row">
+        <p id="gettingStartedTitle">@Html.ActionLink("Toutes les offres", "Index", "Offres", new { area = "" }, new { @class = "nav-link" })</p>
+        <p id="gettingStartedTitle">@Html.ActionLink("Mes postulations", "Index", "Postulations", new { area = "" }, new { @class = "nav-link" })</p>
+        <p id="gettingStartedTitle">@Html.ActionLink("Tous les employés", "Index", "Employes", new { area = "" }, new { @class = "nav-link" })</p>
+    </div>
+</main>

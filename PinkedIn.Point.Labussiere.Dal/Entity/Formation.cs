@@ -1,9 +1,5 @@
-﻿using PinkedIn.Point.Labussiere.Modele.Entity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace PinkedIn.Point.Labussiere.Modele.Entity
 {
@@ -35,6 +31,8 @@ namespace PinkedIn.Point.Labussiere.Modele.Entity
         /// <summary>
         /// Date d'obtention de la formation.
         /// </summary>
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Date { get; set; }
     }
 }

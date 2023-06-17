@@ -1,9 +1,6 @@
-﻿using PinkedIn.Point.Labussiere.Modele.Entity;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace PinkedIn.Point.Labussiere.Modele.Entity
 {
@@ -30,6 +27,8 @@ namespace PinkedIn.Point.Labussiere.Modele.Entity
         /// <summary>
         /// Date de naissance de l'empoyé.
         /// </summary>
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DateDeNaissance { get; set; }
 
         /// <summary>
@@ -56,5 +55,12 @@ namespace PinkedIn.Point.Labussiere.Modele.Entity
         /// Postulations associées à l'employé.
         /// </summary>
         public List<Postulation> Postulations { get; set; }
+
+        public Employe()
+        {
+            Formations = new List<Formation>();
+            Experiences = new List<Experience>();
+            Postulations = new List<Postulation>();
+        }
     }
 }

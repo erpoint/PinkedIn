@@ -17,7 +17,11 @@ namespace PinkedIn.Point.Labussiere.Modele
         /// <summary>
         /// Constructeur de la classe.
         /// </summary>
-        public ContextDA() : base($"name=PinkedInConnectionString") { }
+        public ContextDA() : base($"name=PinkedInConnectionString") 
+        {
+            /*Database.SetInitializer(new DropCreateDatabaseAlways<ContextDA>());*/
+            Database.SetInitializer<ContextDA>(null);
+        }
 
         public DbSet<Employe> Employes { get; set; }
         public DbSet<Formation> Formations { get; set; }
