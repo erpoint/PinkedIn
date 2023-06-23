@@ -4,13 +4,12 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Détail de l'employé</h2>
 
 <div>
-    <h4>Employe</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
+        <dt class="mt-2">
             @Html.DisplayNameFor(model => model.Nom)
         </dt>
 
@@ -18,7 +17,7 @@
             @Html.DisplayFor(model => model.Nom)
         </dd>
 
-        <dt>
+        <dt class="mt-2">
             Prénom
         </dt>
 
@@ -26,7 +25,7 @@
             @Html.DisplayFor(model => model.Prenom)
         </dd>
 
-        <dt>
+        <dt class="mt-2">
             Date de naissance
         </dt>
 
@@ -34,7 +33,7 @@
             @Html.DisplayFor(model => model.DateDeNaissance)
         </dd>
 
-        <dt>
+        <dt class="mt-2">
             Ancienneté (en années)
         </dt>
 
@@ -42,14 +41,14 @@
             @Html.DisplayFor(model => model.Anciennete)
         </dd>
 
-        <dt>
+        <dt class="mt-2">
             @Html.DisplayNameFor(model => model.Biographie)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Biographie)
         </dd>
-        <dt>
+        <dt class="mt-2">
             @Html.DisplayNameFor(model => model.Experiences)
         </dt>
         <table class="table">
@@ -76,7 +75,7 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Ajouter une experience", "AddExperience", new { id = Model.Id }) |
-    @Html.ActionLink("Modifier", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Retourner à la liste", "Index")
+    @Html.ActionLink("Ajouter une experience", "AddExperience", new { id = Model.Id }, null, new { @class = "btn btn-outline-dark" })
+    @Html.ActionLink("Modifier", "Edit", new { id = Model.Id }, null, new { @class = "btn btn-outline-dark" }) |
+    @Html.ActionLink("Retourner à la liste", "Index", null, new { @class = "btn btn-outline-dark" })
 </p>

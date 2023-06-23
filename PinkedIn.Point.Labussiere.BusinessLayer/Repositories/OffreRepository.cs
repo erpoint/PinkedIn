@@ -42,7 +42,10 @@ namespace PinkedIn.Point.Labussiere.BusinessLayer.Repositories
 
         public Offre FindEntity(int id)
         {
-            return _offres.Find(id);
+            return _offres
+                .Where(o => o.Id == id)
+                .Include(o => o.Postulations.Select(p => p.Employe))
+                .First();
         }
 
         public void InsertEntity(Offre entity)

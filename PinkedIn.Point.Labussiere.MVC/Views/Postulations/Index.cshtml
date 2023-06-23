@@ -41,9 +41,9 @@
             @Html.DisplayFor(modelItem => item.Statut)
         </td>
         <td>
-            @Html.ActionLink("Modifier", "Edit", new { offreId = item.OffreId, empId = item.EmployeId }) |
-            @Html.ActionLink("Voir détails", "Details", new { item.OffreId, item.EmployeId }) |
-            @*@Html.ActionLink("Supprimer", "Delete", new { item.Id })*@
+            @Html.ActionLink("Modifier", "Edit", new { offreId = item.OffreId, empId = item.EmployeId }, new { @class = "btn btn-outline-dark" })
+            @Html.ActionLink("Voir détails", "Details", new { item.OffreId, item.EmployeId }, new { @class = "btn btn-outline-dark" })
+            @Html.ActionLink("Supprimer", "Delete", new { item.OffreId }, new { @class = "btn btn-outline-dark" })
         </td>
     </tr>
 }

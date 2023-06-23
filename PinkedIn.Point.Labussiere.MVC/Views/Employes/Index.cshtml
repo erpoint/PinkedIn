@@ -7,7 +7,7 @@
 <h2>Tous les employés</h2>
 
 <p>
-    @Html.ActionLink("Ajouter", "Create")
+    @Html.ActionLink("Ajouter", "Create", null, new { @class = "btn btn-outline-dark" })
 </p>
 <table class="table">
     <tr>
@@ -47,9 +47,9 @@
             @Html.DisplayFor(modelItem => item.Biographie)
         </td>
         <td>
-            @Html.ActionLink("Modifier", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Voir les détails", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Supprimer", "Delete", new { id=item.Id })
+            @Html.ActionLink("Modifier", "Edit", new { id=item.Id }, new { @class = "btn btn-outline-dark" })
+            @Html.ActionLink("Voir les détails", "Details", new { id=item.Id }, new { @class = "btn btn-outline-dark" })
+            @Html.ActionLink("Supprimer", "Delete", new { id=item.Id }, new { @class = "btn btn-outline-dark" })
         </td>
     </tr>
 }

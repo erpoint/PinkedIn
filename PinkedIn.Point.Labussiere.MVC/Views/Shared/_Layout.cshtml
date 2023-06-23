@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html class="h-100">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
@@ -8,8 +8,8 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+<body class="bg-body-pinkedin d-flex flex-column h-100">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-nav-pinkedin">
         <div class="container">
             @Html.ActionLink("PinkedIn", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Activer/désactiver la navigation" aria-controls="navbarSupportedContent"
@@ -18,18 +18,19 @@
             </button>
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Accueil", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Toutes les offres", "Index", "Offres", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Mes postulations", "Index", "Postulations", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Tous les employés", "Index", "Employes", new { area = "" }, new { @class = "nav-link" })</li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - PinkedIn - Erina POINT - Lou LABUSSIERE</p>
-        </footer>
+    <div class="container body-content flex-shrink-0">
+        @RenderBody()        
     </div>
+    <footer class="footer mt-auto py-3 fst-italic container d-flex justify-content-center">
+        <p>&copy; @DateTime.Now.Year - PinkedIn - Erina POINT - Lou LABUSSIERE</p>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
