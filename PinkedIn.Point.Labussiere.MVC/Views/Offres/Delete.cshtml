@@ -8,10 +8,9 @@
 
 <h3>Etes-vous sûr de vouloir supprimer cette offre ?</h3>
 <div>
-    <h4>Offre</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
+        <dt class="mt-2">
             @Html.DisplayNameFor(model => model.Statut.Libelle)
         </dt>
 
@@ -19,7 +18,7 @@
             @Html.DisplayFor(model => model.Statut.Libelle)
         </dd>
 
-        <dt>
+        <dt class="mt-2">
             @Html.DisplayNameFor(model => model.Intitule)
         </dt>
 
@@ -27,7 +26,7 @@
             @Html.DisplayFor(model => model.Intitule)
         </dd>
 
-        <dt>
+        <dt class="mt-2">
             @Html.DisplayNameFor(model => model.Date)
         </dt>
 
@@ -35,7 +34,7 @@
             @Html.DisplayFor(model => model.Date)
         </dd>
 
-        <dt>
+        <dt class="mt-2">
             @Html.DisplayNameFor(model => model.Salaire)
         </dt>
 
@@ -43,7 +42,7 @@
             @Html.DisplayFor(model => model.Salaire)
         </dd>
 
-        <dt>
+        <dt class="mt-2">
             @Html.DisplayNameFor(model => model.Description)
         </dt>
 
@@ -51,7 +50,7 @@
             @Html.DisplayFor(model => model.Description)
         </dd>
 
-        <dt>
+        <dt class="mt-2">
             @Html.DisplayNameFor(model => model.Responsable)
         </dt>
 
@@ -65,7 +64,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Supprimer" class="btn btn-default" /> |
+            <input type="submit" value="Supprimer" class="btn btn-outline-dark" /> |
             @Html.ActionLink("Retourner à la liste", "Index")
         </div>
     }

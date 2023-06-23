@@ -54,10 +54,22 @@ namespace PinkedIn.Point.Labussiere.BusinessLayer.Repositories
         public void UpdateEntity(Postulation entity)
         {
             var entry = _context.Entry(entity);
-            entry.CurrentValues.SetValues(entity);
             entry.State = EntityState.Modified;
 
             _context.SaveChanges();
+        }
+
+        public List<Postulation> FindByEmploye(int empId)
+        {
+            return _postulations.Where(p => p.EmployeId == empId)
+                                .Include(p => p.Offre)
+                                .Include(p => p.Employe)
+                                .ToList();
+        }
+
+        public Postulation FindEntityByEmployeAndOffre(int empId, int offreId)
+        {
+            return _postulations.Where(p => p.EmployeId == empId && p.OffreId == offreId).First();
         }
     }
 }

@@ -9,10 +9,6 @@ namespace PinkedIn.Point.Labussiere.Modele.Entity
     public class Postulation : IEntity
     {
         /// <summary>
-        /// Id de la postulation
-        /// </summary>
-        public int Id { get; set; }
-        /// <summary>
         /// Id de l'employé qui possède la postulation
         /// </summary>
         public int EmployeId { get; set; }

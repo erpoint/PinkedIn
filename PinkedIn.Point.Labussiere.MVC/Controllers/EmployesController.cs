@@ -12,6 +12,7 @@ namespace PinkedIn.Point.Labussiere.MVC.Controllers
     public class EmployesController : Controller
     {
         private EmployeRepository repo = new EmployeRepository();
+        private ExperienceRepository experienceRepo = new ExperienceRepository();
 
         // GET: Employes
         public ActionResult Index()
@@ -121,6 +122,29 @@ namespace PinkedIn.Point.Labussiere.MVC.Controllers
             Employe employe = repo.FindEntity((int)id);
             repo.DeleteEntity(employe);
             return RedirectToAction("Index");
+        }
+
+        public ActionResult AddExperience(int id)
+        {
+            if(id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Employe employe = repo.FindEntity((int)id);
+            if (employe == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.EmployeId = employe.Id;
+            return View();
+        }
+
+        [HttpPost, ActionName("AddExperience")]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddExperience([Bind(Include = "Id,EmployeId,Intitule,Date")] Experience experience)
+        {
+            experienceRepo.InsertEntity(experience);
+            return RedirectToAction("Detail", new {id=experience.EmployeId});
         }
     }
 }

@@ -4,14 +4,14 @@
     ViewBag.Title = "Postuler";
 }
 
-<h2>Postuler</h2>
+<h2>Postuler sur une offre</h2>
 <h3>Etes-vous sûr de vouloir postuler pour l'offre @Html.DisplayFor(model => model.Statut.Libelle)?</h3>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-actions no-color">
-        <input type="submit" value="Oui" class="btn btn-default" /> |
-        @Html.ActionLink("Non", "Index")
+        <input type="submit" value="Oui" class="btn btn-outline-dark" /> |
+        @Html.ActionLink("Non", "Index", null, new { @class = "btn btn-outline-dark" })
     </div>
 }

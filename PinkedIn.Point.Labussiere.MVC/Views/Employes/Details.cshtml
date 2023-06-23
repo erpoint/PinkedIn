@@ -4,13 +4,12 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Détail de l'employé</h2>
 
 <div>
-    <h4>Employe</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
+        <dt class="mt-2">
             @Html.DisplayNameFor(model => model.Nom)
         </dt>
 
@@ -18,41 +17,65 @@
             @Html.DisplayFor(model => model.Nom)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Prenom)
+        <dt class="mt-2">
+            Prénom
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Prenom)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DateDeNaissance)
+        <dt class="mt-2">
+            Date de naissance
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.DateDeNaissance)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Anciennete)
+        <dt class="mt-2">
+            Ancienneté (en années)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Anciennete)
         </dd>
 
-        <dt>
+        <dt class="mt-2">
             @Html.DisplayNameFor(model => model.Biographie)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Biographie)
         </dd>
-
+        <dt class="mt-2">
+            @Html.DisplayNameFor(model => model.Experiences)
+        </dt>
+        <table class="table">
+            <tr>
+                <th>
+                    Intitulé
+                </th>
+                <th>
+                    Date
+                </th>
+            </tr>
+            @foreach (var item in Model?.Experiences)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Intitule)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                </tr>
+            }
+        </table>
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Ajouter une experience", "AddExperience", new { id = Model.Id }, null, new { @class = "btn btn-outline-dark" })
+    @Html.ActionLink("Modifier", "Edit", new { id = Model.Id }, null, new { @class = "btn btn-outline-dark" }) |
+    @Html.ActionLink("Retourner à la liste", "Index", null, new { @class = "btn btn-outline-dark" })
 </p>

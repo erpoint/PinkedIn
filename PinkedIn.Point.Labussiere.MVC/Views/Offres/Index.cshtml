@@ -7,7 +7,7 @@
 <h2>Toutes les offres</h2>
 
 <p>
-    @Html.ActionLink("Ajouter une offre", "Create")
+    @Html.ActionLink("Ajouter une offre", "Create", null, new { @class = "btn btn-outline-dark" })
 </p>
 <form asp-controller="OffresController" asp-action="Index" method="post">
     <input type="text" name="offreSearch"/>
@@ -15,9 +15,6 @@
 </form>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Statut.Libelle)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.Intitule)
         </th>
@@ -39,9 +36,6 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Statut.Libelle)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Intitule)
         </td>
         <td>
@@ -57,9 +51,9 @@
             @Html.DisplayFor(modelItem => item.Responsable)
         </td>
         <td>
-            @Html.ActionLink("Modifier", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Voir détails", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Supprimer", "Delete", new { id=item.Id })
+            @Html.ActionLink("Modifier", "Edit", new { id=item.Id }, new { @class = "btn btn-outline-dark" })
+            @Html.ActionLink("Voir détails", "Details", new { id=item.Id }, new { @class = "btn btn-outline-dark" })
+            @Html.ActionLink("Supprimer", "Delete", new { id=item.Id }, new { @class = "btn btn-outline-dark" })
         </td>
     </tr>
 }

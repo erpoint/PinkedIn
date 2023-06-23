@@ -4,21 +4,12 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Détails de l'offre</h2>
 
 <div>
-    <h4>Offre</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Statut.Libelle)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Statut.Libelle)
-        </dd>
-
-        <dt>
+        <dt class="mt-2">
             @Html.DisplayNameFor(model => model.Intitule)
         </dt>
 
@@ -26,7 +17,7 @@
             @Html.DisplayFor(model => model.Intitule)
         </dd>
 
-        <dt>
+        <dt class="mt-2">
             @Html.DisplayNameFor(model => model.Date)
         </dt>
 
@@ -34,7 +25,7 @@
             @Html.DisplayFor(model => model.Date)
         </dd>
 
-        <dt>
+        <dt class="mt-2">
             @Html.DisplayNameFor(model => model.Salaire)
         </dt>
 
@@ -42,7 +33,7 @@
             @Html.DisplayFor(model => model.Salaire)
         </dd>
 
-        <dt>
+        <dt class="mt-2">
             @Html.DisplayNameFor(model => model.Description)
         </dt>
 
@@ -50,14 +41,14 @@
             @Html.DisplayFor(model => model.Description)
         </dd>
 
-        <dt>
+        <dt class="mt-2">
             @Html.DisplayNameFor(model => model.Responsable)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Responsable)
         </dd>
-        <dt>
+        <dt class="mt-2">
             @Html.DisplayNameFor(model => model.Postulations)
         </dt>
         <table class="table">
@@ -67,6 +58,9 @@
                 </th>
                 <th>
                     Prenom
+                </th>
+                <th>
+                    Date de postulation
                 </th>
             </tr>
             @foreach (var item in Model?.Postulations)
@@ -78,13 +72,19 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Employe.Nom)
                     </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
                 </tr>
             }
         </table>
         </dl>
 </div>
 <p>
-    @Html.ActionLink("Postuler", "Apply", new { offreId = Model.Id, employeId = 1 }) |
-    @Html.ActionLink("Modifier", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Retourner à la liste", "Index")
+    @if(!Model.Postulations.Any(p => p.EmployeId == 1))
+    {
+        @Html.ActionLink("Postuler", "Apply", new { offreId = Model.Id, employeId = 1 }, new { @class = "btn btn-outline-dark" })
+    }
+    @Html.ActionLink("Modifier", "Edit", new { id = Model.Id }, new { @class = "btn btn-outline-dark" })
+    @Html.ActionLink("Retourner à la liste", "Index", null, new { @class = "btn btn-outline-dark" })
 </p>
