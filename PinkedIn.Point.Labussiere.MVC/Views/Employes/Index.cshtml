@@ -9,9 +9,9 @@
 <p>
     @Html.ActionLink("Ajouter", "Create", null, new { @class = "btn btn-outline-dark" })
 </p>
-<form asp-controller="EmployesController" asp-action="Index" method="post">
+<form asp-controller="EmployesController" asp-action="Index" method="post" class="mb-2">
     <input name="searchEmployee" placeholder="rechercher" type="text"/>
-    <input type="submit"/>
+    <input type="submit" class="btn btn-outline-dark"/>
 </form>
 <table class="table">
     <tr>
