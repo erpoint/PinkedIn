@@ -9,6 +9,10 @@
 <p>
     @Html.ActionLink("Ajouter une offre", "Create")
 </p>
+<form asp-controller="OffresController" asp-action="Index" method="post">
+    <input type="text" name="offreSearch"/>
+    <input type="submit"/>
+</form>
 <table class="table">
     <tr>
         <th>
