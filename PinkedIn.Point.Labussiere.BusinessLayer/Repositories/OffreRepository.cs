@@ -40,6 +40,18 @@ namespace PinkedIn.Point.Labussiere.BusinessLayer.Repositories
             return _offres.ToList();
         }
 
+        public List<Offre> FindByIntitule(string name)
+        {
+            return _offres.Where(o => o.Intitule.ToUpper().Contains(name.ToUpper())).ToList();
+        }
+        public List<Offre> FindByDescription(string description)
+        {
+            return _offres.Where(o => o.Description.ToUpper().Contains(description.ToUpper())).ToList();
+        }
+        public List<Offre> FindByInitiuleOrDescription(string searchString)
+        {
+            return FindByIntitule(searchString).Concat(FindByDescription(searchString)).Distinct().ToList();
+        }
         public Offre FindEntity(int id)
         {
             return _offres

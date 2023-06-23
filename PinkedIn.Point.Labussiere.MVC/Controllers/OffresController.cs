@@ -20,6 +20,12 @@ namespace PinkedIn.Point.Labussiere.MVC.Controllers
             List<Offre> offres = offreRepo.FindAll();
             return View(offres);
         }
+        // POST: Offres
+        [HttpPost]
+        public ActionResult Index(string offreSearch)
+        {
+            return View(offreRepo.FindByInitiuleOrDescription(offreSearch));
+        }
 
         // GET: Offres/Details/5
         public ActionResult Details(int? id)
