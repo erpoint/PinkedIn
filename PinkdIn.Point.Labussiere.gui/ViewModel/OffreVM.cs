@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PinkedIn.Point.Labussiere.Modele.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,20 @@ namespace PinkdIn.Point.Labussiere.gui.ViewModel
         private string responsable;
 
         private string idPostulation;
+
+        public OffreVM(Offre offre)
+        {
+            Model = offre;
+            this.intitule = offre.Intitule;
+            this.date = offre.Date;
+            this.salaire = offre.Salaire;
+            this.description = offre.Description;
+            this.responsable = offre.Responsable;
+        }
+        public OffreVM()
+        {
+
+        }
 
         //private List<PostulationVM> postulation;
 
@@ -88,6 +103,7 @@ namespace PinkdIn.Point.Labussiere.gui.ViewModel
         public string Responsable { get; set; }
 
         public string IdPostulation { get; set; }
+        public Offre Model { get; }
 
         //public List<PostulationVM> Postulation { get; set; }
     }

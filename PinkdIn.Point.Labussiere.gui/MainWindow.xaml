@@ -3,15 +3,23 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PinkdIn.Point.Labussiere.gui"
+        xmlns:local="clr-namespace:PinkdIn.Point.Labussiere.gui" xmlns:local1="clr-namespace:PinkdIn.Point.Labussiere.gui.ViewModel" xmlns:uc="clr-namespace:PinkdIn.Point.Labussiere.gui.uc"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <local1:OffresVM></local1:OffresVM>
+    </Window.DataContext>
     <DockPanel>
-        <WrapPanel DockPanel.Dock="Top">
-            <Label>PinkedIn</Label>
-            <Button>Liste des offres</Button>
-            <Button>Liste des postulations</Button>
-            <Button>Liste des employés</Button>
-        </WrapPanel>
+        <Label DockPanel.Dock="Top">PinkedIn</Label>
+        <ListView DockPanel.Dock="Left" SelectedItem="{Binding SelectedOffre}" ItemsSource="{Binding Offres, UpdateSourceTrigger=PropertyChanged}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="150px" Header="Initiule" DisplayMemberBinding="{Binding Intitule}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ContentControl Name="detail">
+            <uc:OffreUC DataContext="{Binding SelectedOffre}" />
+        </ContentControl>
     </DockPanel>
 </Window>
